@@ -1,104 +1,66 @@
-body{
-    display: grid;
-    place-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #111;
-
+* {
+margin: 0;
+padding: 0;
+}
+body {
+height: 100vh;
+width: 100vw;
+background: #18191f;
+}
+.container {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+width: 100vw;
 }
 
-.wifi-loader{
-    width: 20px;
-    height: 20px;
-    background-color: #444;
-    border-radius: 50%;
-    position:relative;
-    transform: translateY(45px);
-    animation: glow 3s linear infinite;
+#apple,
+#twitter,
+#github,
+#facebook {
+font-size: 8em; /*icon size*/
+background-color: #000000; /*icon background defulat value #18191f, alternative #000080, #000000*/
+color: #000050; /*#000080change the icon color default value #fff*/
+box-shadow: 2px 2px 2px #000080, 10px 
+    1px 120px #000080, /*defualt value 10,1,12px*/
+    2px 2px 10px #000080, 2px 2px 3px 
+    #000080, inset 2px 2px 10px #000080,
+    inset 2px 2px 10px #000080, inset 2px 
+    2px 10px #000080,
+    inset 2px 2px 10px #000080;
+border-radius: 29px; /*defulat value 29px, alternative 290px*/
+padding: 11px 19px;
+margin 0 40px;
+animation: animate 3s linear infinite;
+text-shadow: 
 }
 
-.bar,
-.bar::before,
-.bar::after{
-    border: 15px solid #444;
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-bottom: 15px solid transparent;
-    border-radius: 50%;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+#twitter {
+animation-delay: 0.3s;
 }
 
-.bar{
-    width: 40px;
-    height: 40px;
-    top: -25px;
-    animation: bar-glow1 3s linear infinite;
+#facebook {
+animation-delay: 0.7s;
 }
 
-.bar::before{
-    content: "";
-    width: 90px;
-    height: 90px;
-    top: -40px;
-    animation: bar-glow2 3s linear infinite;
+#github {
+animation-delay: 0.1s;    
 }
 
-.bar::after{
-    content: "";
-    width: 140px;
-    height: 140px;
-    top: -65px;
-    animation: bar-glow3 3s linear infinite;
-}
+/*@-webkit-keyframes change-color {
+    0% { background-color: red; }
+    100% {background-color: green; }
+} it´s for background-color change animation*/
 
-/* defualt value for all @keframes #444, #ff7a00, #ff7a00; */
-
-@keyframes glow{
-    20%{
-        background-color: #444;
+@keyframes animate {
+    from {
+        filter: hue-rotate(0deg);
     }
-    21%{
-        background-color: red;
+    to {
+        filter: hue-rotate(360deg);
     }
-    100%{
-        background-color: red;
-    }
-}
-
-@keyframes bar-glow1{
-    40%{
-        border-top-color: #444;
-    }
-    41%{
-        border-top-color: #ff7a00;
-    }
-    100%{
-        border-top-color: #ff7a00;
-    }
-}
-
-@keyframes bar-glow2{
-    60%{
-        border-top-color: #444;
-    }
-    61%{
-        border-top-color: yellow;
-    }
-    100%{
-        border-top-color: yellow;
-    }
-}
-
-@keyframes bar-glow3{
-    80%{
-        border-top-color: #444;
-    }
-    81%{
-        border-top-color: green;
-    }
-    100%{
-        border-top-color: green;
+    /*.animated {
+        -webkit-animation: change-color 3s infinite; it´s for background-color change animation*/
     }
 }
