@@ -1,0 +1,104 @@
+body{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #111;
+
+}
+
+.wifi-loader{
+    width: 20px;
+    height: 20px;
+    background-color: #444;
+    border-radius: 50%;
+    position:relative;
+    transform: translateY(45px);
+    animation: glow 3s linear infinite;
+}
+
+.bar,
+.bar::before,
+.bar::after{
+    border: 15px solid #444;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.bar{
+    width: 40px;
+    height: 40px;
+    top: -25px;
+    animation: bar-glow1 3s linear infinite;
+}
+
+.bar::before{
+    content: "";
+    width: 90px;
+    height: 90px;
+    top: -40px;
+    animation: bar-glow2 3s linear infinite;
+}
+
+.bar::after{
+    content: "";
+    width: 140px;
+    height: 140px;
+    top: -65px;
+    animation: bar-glow3 3s linear infinite;
+}
+
+/* defualt value for all @keframes #444, #ff7a00, #ff7a00; */
+
+@keyframes glow{
+    20%{
+        background-color: #444;
+    }
+    21%{
+        background-color: red;
+    }
+    100%{
+        background-color: red;
+    }
+}
+
+@keyframes bar-glow1{
+    40%{
+        border-top-color: #444;
+    }
+    41%{
+        border-top-color: #ff7a00;
+    }
+    100%{
+        border-top-color: #ff7a00;
+    }
+}
+
+@keyframes bar-glow2{
+    60%{
+        border-top-color: #444;
+    }
+    61%{
+        border-top-color: yellow;
+    }
+    100%{
+        border-top-color: yellow;
+    }
+}
+
+@keyframes bar-glow3{
+    80%{
+        border-top-color: #444;
+    }
+    81%{
+        border-top-color: green;
+    }
+    100%{
+        border-top-color: green;
+    }
+}
